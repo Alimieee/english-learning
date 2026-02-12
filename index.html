@@ -4,103 +4,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>English Learning (A1) – Reading Module</title>
-    <meta name="description"
-        content="Free interactive A1-level English learning website. Practice reading through stories about family and relationships.">
+    <title>English Learning | Home</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        .module-cards {
+        body {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .welcome-container {
+            padding: 2rem;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #1e293b;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+        }
+
+        p.subtitle {
+            color: #64748b;
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+        }
+
+        .choice-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-            padding: 3rem 0 4rem;
         }
 
-        .module-card {
-            display: block;
+        .choice-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
             text-decoration: none;
             color: inherit;
-            background: var(--surface);
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            box-shadow: var(--shadow-card);
-            transition: transform .3s ease, box-shadow .3s ease;
-            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 2px solid transparent;
         }
 
-        .module-card:hover {
+        .choice-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(79, 70, 229, .18);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
         }
 
-        .module-card img {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-            display: block;
+        .choice-card.reading:hover {
+            border-color: #4f46e5;
         }
 
-        .module-card h3 {
-            text-align: center;
-            padding: 1.2rem 1rem;
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--text-800);
-            margin: 0;
+        .choice-card.speaking:hover {
+            border-color: #7c3aed;
         }
 
-        .module-card:hover h3 {
-            color: var(--primary);
+        .icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .choice-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #334155;
+        }
+
+        .choice-card p {
+            color: #64748b;
+            line-height: 1.5;
+        }
+
+        .btn-start {
+            margin-top: 1.5rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            color: white;
+            transition: opacity 0.2s;
+        }
+
+        .btn-start.reading {
+            background: #4f46e5;
+        }
+
+        .btn-start.speaking {
+            background: #7c3aed;
+        }
+
+        footer {
+            margin-top: 4rem;
+            color: #94a3b8;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 
 <body>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <a href="index.html" class="logo">📚 English Learning</a>
-            <ul>
-                <li><a href="index.html" class="active">Reading</a></li>
-                <li><a href="speaking.html">Speaking</a></li>
-            </ul>
+    <div class="welcome-container">
+        <h1>Welcome to English Learning! 🌟</h1>
+        <p class="subtitle">What would you like to practice today?</p>
+
+        <div class="choice-cards">
+            <!-- Reading Path -->
+            <a href="reading.html" class="choice-card reading">
+                <div class="icon">📖</div>
+                <h2>Reading Module</h2>
+                <p>Read interesting stories and answer questions to improve your comprehension.</p>
+                <div class="btn-start reading">Start Reading →</div>
+            </a>
+
+            <!-- Speaking Path -->
+            <a href="speaking.html" class="choice-card speaking">
+                <div class="icon">🗣️</div>
+                <h2>Speaking Module</h2>
+                <p>Practice speaking with fun challenges, tongue twisters, and games.</p>
+                <div class="btn-start speaking">Start Speaking →</div>
+            </a>
         </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <div class="hero">
-        <h1>📖 Reading Module</h1>
-        <p>Choose a story to read and complete interactive exercises!</p>
+        <footer>
+            <p>&copy; 2026 English Learning Website — A1 Level</p>
+        </footer>
     </div>
-
-    <!-- Module Cards -->
-    <div class="container">
-        <div class="module-cards">
-
-            <a href="module1.html" class="module-card">
-                <img src="images/covers/family.png" alt="My Family Life">
-                <h3>My Family Life</h3>
-            </a>
-
-            <a href="module2.html" class="module-card">
-                <img src="images/covers/adventure.png" alt="Buzz and Bob's Big Adventure">
-                <h3>Buzz and Bob's Big Adventure</h3>
-            </a>
-
-            <a href="module3.html" class="module-card">
-                <img src="images/covers/romeo.png" alt="Romeo and Juliet">
-                <h3>Romeo and Juliet</h3>
-            </a>
-
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 English Learning Website — A1 Level</p>
-        <p>Theme: Family &amp; Relationships</p>
-    </footer>
 
 </body>
 
