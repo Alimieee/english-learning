@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speaking Module | English Learning</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ===== Speaking / Voice Theme ===== */
+        body {
+            background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 30%, #f0f0ff 60%, #e8e5fc 100%);
+            min-height: 100vh;
+        }
+
+        /* Floating speech elements */
+        .speech-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .speech-icon {
+            position: absolute;
+            opacity: 0;
+            animation: floatSpeech 9s ease-in-out infinite;
+        }
+
+        .speech-icon:nth-child(1) {
+            left: 4%;
+            animation-delay: 0s;
+            font-size: 1.3rem;
+        }
+
+        .speech-icon:nth-child(2) {
+            left: 14%;
+            animation-delay: 1.5s;
+            font-size: 1.6rem;
+        }
+
+        .speech-icon:nth-child(3) {
+            left: 24%;
+            animation-delay: 3s;
+            font-size: 1rem;
+        }
+
+        .speech-icon:nth-child(4) {
+            left: 35%;
+            animation-delay: 0.8s;
+            font-size: 1.7rem;
+        }
+
+        .speech-icon:nth-child(5) {
+            left: 46%;
+            animation-delay: 3.5s;
+            font-size: 1.2rem;
+        }
+
+        .speech-icon:nth-child(6) {
+            left: 57%;
+            animation-delay: 2s;
+            font-size: 1.4rem;
+        }
+
+        .speech-icon:nth-child(7) {
+            left: 67%;
+            animation-delay: 4s;
+            font-size: 1rem;
+        }
+
+        .speech-icon:nth-child(8) {
+            left: 77%;
+            animation-delay: 2.5s;
+            font-size: 1.5rem;
+        }
+
+        .speech-icon:nth-child(9) {
+            left: 87%;
+            animation-delay: 3.2s;
+            font-size: 1.1rem;
+        }
+
+        .speech-icon:nth-child(10) {
+            left: 94%;
+            animation-delay: 1s;
+            font-size: 1.3rem;
+        }
+
+        @keyframes floatSpeech {
+            0% {
+                transform: translateY(100vh) rotate(0deg) scale(0.5);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.5;
+            }
+
+            50% {
+                opacity: 0.25;
+            }
+
+            100% {
+                transform: translateY(-10vh) rotate(15deg) scale(1.1);
+                opacity: 0;
+            }
+        }
+
+        /* Speaking Header */
+        .speaking-header {
+            background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 40%, #5b21b6 100%);
+            padding: 3rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .speaking-header::before {
+            content: '🗣️';
+            position: absolute;
+            top: 12px;
+            left: 20px;
+            font-size: 2rem;
+            opacity: 0.3;
+            animation: talk 1.5s ease-in-out infinite;
+        }
+
+        .speaking-header::after {
+            content: '💬';
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
+            font-size: 2.2rem;
+            opacity: 0.3;
+            animation: talk 1.5s ease-in-out infinite 0.5s;
+        }
+
+        @keyframes talk {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
+        }
+
+        .speaking-header h1 {
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin: 0 0 0.5rem;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, .15);
+        }
+
+        .speaking-header p {
+            color: rgba(255, 255, 255, .9);
+            font-size: 1.1rem;
+            margin: 0;
+            font-style: italic;
+        }
+
+        /* Nav override */
+        nav {
+            background: linear-gradient(135deg, #5b21b6, #4c1d95) !important;
+            backdrop-filter: none !important;
+        }
+
+        nav .logo {
+            color: #c4b5fd !important;
+        }
+
+        .container.module-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Speaking Section Cards */
+        .speaking-card {
+            background: #fff;
+            border: 2px solid #c4b5fd;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(124, 58, 237, .06);
+        }
+
+        .speaking-card h2 {
+            font-family: 'Poppins', sans-serif;
+            color: #5b21b6;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .speaking-card>p {
+            color: #4a346e;
+            line-height: 1.7;
+        }
+
+        /* Video container */
+        .speaking-card .video-container {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid #ddd6fe;
+        }
+
+        /* Tips box */
+        .speaking-tips {
+            background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+            border: 2px solid #ddd6fe;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .speaking-tips h3 {
+            font-family: 'Poppins', sans-serif;
+            color: #6d28d9;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .speaking-tips li {
+            color: #4a346e;
+            margin: 0.4rem 0;
+        }
+
+        /* Info box */
+        .speaking-info {
+            background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+            border: 2px solid #d8b4fe;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .speaking-info h3 {
+            font-family: 'Poppins', sans-serif;
+            color: #7c3aed;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .speaking-info li {
+            color: #4a346e;
+            margin: 0.4rem 0;
+        }
+
+        .speaking-info strong {
+            color: #6d28d9;
+        }
+
+        /* Tongue twister highlight */
+        .twister {
+            font-style: italic;
+            color: #7c3aed;
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+        /* Game buttons */
+        .speaking-card .btn-game {
+            background: linear-gradient(135deg, #7c3aed, #6d28d9) !important;
+            color: #fff !important;
+            border: none !important;
+            box-shadow: 0 4px 14px rgba(124, 58, 237, .3);
+            font-weight: 700;
+            padding: 0.8rem 2rem;
+            border-radius: 12px;
+            font-size: 1.05rem;
+            transition: all .2s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .speaking-card .btn-game:hover {
+            background: linear-gradient(135deg, #6d28d9, #5b21b6) !important;
+            box-shadow: 0 6px 20px rgba(124, 58, 237, .4);
+            transform: translateY(-2px);
+        }
+
+        /* Tips grid */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        .tip-card {
+            background: linear-gradient(135deg, #f5f3ff 0%, #fff 100%);
+            border: 2px solid #ddd6fe;
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all .2s ease;
+        }
+
+        .tip-card:hover {
+            border-color: #a78bfa;
+            box-shadow: 0 4px 16px rgba(124, 58, 237, .1);
+            transform: translateY(-3px);
+        }
+
+        .tip-card h4 {
+            font-family: 'Poppins', sans-serif;
+            color: #6d28d9;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .tip-card p {
+            color: #4a346e;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Section title */
+        .speaking-section-title {
+            font-family: 'Poppins', sans-serif;
+            color: #5b21b6;
+            font-size: 1.6rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .speaking-section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #c4b5fd, #7c3aed, #c4b5fd);
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #5b21b6, #4c1d95) !important;
+            color: #c4b5fd !important;
+        }
+
+        footer p {
+            color: #c4b5fd !important;
+        }
+
+        @media (max-width: 600px) {
+            .speaking-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .speaking-card {
+                padding: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Floating Background -->
+    <div class="speech-bg">
+        <span class="speech-icon">🗣️</span>
+        <span class="speech-icon">💬</span>
+        <span class="speech-icon">🎤</span>
+        <span class="speech-icon">💭</span>
+        <span class="speech-icon">🗨️</span>
+        <span class="speech-icon">🎙️</span>
+        <span class="speech-icon">🗣️</span>
+        <span class="speech-icon">💬</span>
+        <span class="speech-icon">🎤</span>
+        <span class="speech-icon">💭</span>
+    </div>
+
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">📚 English Learning</a>
+        </div>
+    </nav>
+
+    <div class="speaking-header">
+        <h1>🗣️ Speaking Module 💬</h1>
+        <p>Challenge yourself with tongue twisters and interactive speaking games!</p>
+    </div>
+
+    <div class="container module-content">
+
+        <!-- Challenge 1 – Tongue Twister -->
+        <div class="speaking-card">
+            <h2>🏆 Challenge 1 – Tongue Twister</h2>
+            <p>Watch the tongue twister video below. Then practice saying the tongue twister as fast as you can!</p>
+
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/kLq2JbBFCjQ" title="Tongue Twisters"
+                    allowfullscreen></iframe>
+            </div>
+
+            <div class="speaking-tips">
+                <h3>💡 How to Practice</h3>
+                <ul class="list-styled">
+                    <li>Watch the video and listen carefully to the pronunciation.</li>
+                    <li>Say the tongue twister slowly at first.</li>
+                    <li>Then try to say it faster and faster!</li>
+                    <li>Record yourself and compare with the video.</li>
+                </ul>
+            </div>
+
+            <div class="speaking-info">
+                <h3>🎯 Try These Tongue Twisters!</h3>
+                <ul class="list-styled" style="margin-top:.75rem;">
+                    <li><span class="twister">"She sells seashells by the seashore."</span></li>
+                    <li><span class="twister">"Peter Piper picked a peck of pickled peppers."</span></li>
+                    <li><span class="twister">"How much wood would a woodchuck chuck if a woodchuck could chuck
+                            wood?"</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Challenge 2 – Mystery Boxes -->
+        <div class="speaking-card">
+            <h2>🏆 Challenge 2 – Mystery Boxes Game</h2>
+            <p>Open mystery boxes and describe what you see inside! This fun game helps you practice speaking about
+                everyday objects and family items.</p>
+
+            <div class="speaking-info">
+                <h3>📋 How to Play</h3>
+                <ol class="list-styled" style="margin-top:.75rem;">
+                    <li>Click the link below to open the Mystery Boxes game on Wordwall.</li>
+                    <li>Open a mystery box by clicking on it.</li>
+                    <li>Describe the item inside using full English sentences.</li>
+                    <li>Try to use adjectives — "It is a <strong>big, red</strong> ball!"</li>
+                </ol>
+            </div>
+
+            <div class="text-center mt-2">
+                <a href="https://wordwall.net/resource/107374482" target="_blank" class="btn-game">
+                    🎮 Play Mystery Boxes Game →
+                </a>
+            </div>
+        </div>
+
+        <!-- Challenge 3 – Bestie Fortune Teller -->
+        <div class="speaking-card">
+            <h2>🏆 Challenge 3 – Bestie Fortune Teller</h2>
+            <p>Test how well you know your best friend! Pick a card and answer the question about your friend. Then
+                compare answers!</p>
+
+            <div class="speaking-info">
+                <h3>📋 How to Play</h3>
+                <ol class="list-styled" style="margin-top:.75rem;">
+                    <li>Click the link below to open the speaking cards on Wordwall.</li>
+                    <li>Pick a random card.</li>
+                    <li>Read the question aloud and answer it about your best friend.</li>
+                    <li>If you're playing with a partner, take turns and see who knows more!</li>
+                </ol>
+            </div>
+
+            <div class="text-center mt-2">
+                <a href="https://wordwall.net/resource/107380826" target="_blank" class="btn-game">
+                    🔮 Play Bestie Fortune Teller →
+                </a>
+            </div>
+        </div>
+
+        <!-- Practice Tips -->
+        <div class="speaking-card">
+            <h2 class="speaking-section-title">💡 Speaking Practice Tips</h2>
+
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4>🗓️ Daily Practice</h4>
+                    <p>Speak English for at least 5 minutes every day. Talk about your daily routine, your family, or
+                        what you ate.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>🎧 Listen & Repeat</h4>
+                    <p>Listen to songs or videos in English and repeat after the speaker. This helps your pronunciation.
+                    </p>
+                </div>
+                <div class="tip-card">
+                    <h4>📱 Record Yourself</h4>
+                    <p>Use your phone to record yourself speaking. Listen back and compare with native speakers.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>👫 Find a Partner</h4>
+                    <p>Practice speaking with a friend, family member, or online language exchange partner.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 English Learning Website | Speaking Module 🗣️</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
