@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writing Module | English Learning</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">📚 English Learning</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="listening.html">Listening</a></li>
+                <li><a href="speaking.html">Speaking</a></li>
+                <li><a href="reading.html">Reading</a></li>
+                <li><a href="writing.html" class="active">Writing</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Module Header -->
+    <div class="module-header header-writing">
+        <h1>✍️ Writing Module</h1>
+        <p>Practice your writing skills with interactive exercises about family, self-introduction, and favourite meals.
+        </p>
+    </div>
+
+    <div class="container module-content">
+
+        <!-- =========================================
+       WRITING MODULE 1 – About My Family
+       ========================================= -->
+        <section class="section" id="writing-mod1-section">
+            <h2 class="section-title">✏️ Writing Module 1 – About My Family</h2>
+
+            <!-- Preparation: Drag Vocabulary into Categories -->
+            <div class="exercise" id="writing-vocab-exercise">
+                <h3>Preparation: Vocabulary Sorting</h3>
+                <p>Drag each word from the bank into the correct category below.</p>
+
+                <div class="word-bank" id="vocab-bank">
+                    <span class="word-bank-item" draggable="true" data-value="headscarf">Headscarf</span>
+                    <span class="word-bank-item" draggable="true" data-value="tall">Tall</span>
+                    <span class="word-bank-item" draggable="true" data-value="cat">Cat</span>
+                    <span class="word-bank-item" draggable="true" data-value="nasi lemak">Nasi Lemak</span>
+                    <span class="word-bank-item" draggable="true" data-value="slim">Slim</span>
+                    <span class="word-bank-item" draggable="true" data-value="listening to music">Listening to
+                        Music</span>
+                    <span class="word-bank-item" draggable="true" data-value="short">Short</span>
+                    <span class="word-bank-item" draggable="true" data-value="english">English</span>
+                </div>
+
+                <div class="category-grid cols-4">
+                    <div class="category-column" id="cat-appearance">
+                        <h4>👤 Describing People</h4>
+                    </div>
+                    <div class="category-column" id="cat-food-hobby">
+                        <h4>🍽️ Food &amp; Hobbies</h4>
+                    </div>
+                    <div class="category-column" id="cat-subject">
+                        <h4>📘 School Subject</h4>
+                    </div>
+                    <div class="category-column" id="cat-pet">
+                        <h4>🐾 Pet</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Check Your Writing: Drag words into paragraph -->
+            <div class="exercise" id="writing-mod1-exercise">
+                <h3>Check Your Writing</h3>
+                <p>Drag the words from the bank into the correct blanks to complete the paragraph.</p>
+
+                <div class="word-bank" id="w1-bank">
+                    <span class="word-bank-item" draggable="true" data-value="house">house</span>
+                    <span class="word-bank-item" draggable="true" data-value="brother">brother</span>
+                    <span class="word-bank-item" draggable="true" data-value="teacher">teacher</span>
+                    <span class="word-bank-item" draggable="true" data-value="malaysian">Malaysian</span>
+                    <span class="word-bank-item" draggable="true" data-value="hair">hair</span>
+                    <span class="word-bank-item" draggable="true" data-value="eyes">eyes</span>
+                    <span class="word-bank-item" draggable="true" data-value="cat">cat</span>
+                </div>
+
+                <div class="story-box">
+                    <p>I live in a big terrace (1) <span class="drop-zone" id="w1-drop1" data-bank="w1-bank"></span>
+                        with my mum, my dad, and my big (2) <span class="drop-zone" id="w1-drop2"
+                            data-bank="w1-bank"></span>. We live in Kuala Lumpur.</p>
+
+                    <p>My mum's name is Priya. She's Malaysian and is a History (3) <span class="drop-zone"
+                            id="w1-drop3" data-bank="w1-bank"></span>.</p>
+
+                    <p>My dad's name is Ravi. He's (4) <span class="drop-zone" id="w1-drop4" data-bank="w1-bank"></span>
+                        too and he's very tall and strong. He works in an office.</p>
+
+                    <p>My big brother is 18 and he goes to college. He has short, black (5) <span class="drop-zone"
+                            id="w1-drop5" data-bank="w1-bank"></span> and dark (6) <span class="drop-zone" id="w1-drop6"
+                            data-bank="w1-bank"></span>.</p>
+
+                    <p>We've got a pet (7) <span class="drop-zone" id="w1-drop7" data-bank="w1-bank"></span>, Comel!</p>
+                </div>
+
+                <div class="flex-btns">
+                    <button class="btn btn-primary btn-submit" data-exercise="writing_mod1">✅ Check Answers</button>
+                    <button class="btn btn-outline" onclick="resetExercise('writing-mod1-exercise')">🔄 Reset</button>
+                </div>
+            </div>
+
+            <!-- Grammar Check -->
+            <div class="exercise" id="writing-grammar-exercise">
+                <h3>Section B: Grammar &amp; Detail Check</h3>
+                <p>Choose the correct sentence in each pair. Watch out for capital letters and grammar rules!</p>
+
+                <div class="question">
+                    <p class="question-text">Location:</p>
+                    <div class="options">
+                        <label class="option-label">
+                            <input type="radio" name="grammar1" value="a"> We live in Selangor.
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="grammar1" value="b"> we live in Selangor.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-text">Nationalities:</p>
+                    <div class="options">
+                        <label class="option-label">
+                            <input type="radio" name="grammar2" value="a"> My mum's iban.
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="grammar2" value="b"> My mum's Iban.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-text">Occupation:</p>
+                    <div class="options">
+                        <label class="option-label">
+                            <input type="radio" name="grammar3" value="a"> She's English teacher.
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="grammar3" value="b"> She's an English teacher.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-text">Possessives:</p>
+                    <div class="options">
+                        <label class="option-label">
+                            <input type="radio" name="grammar4" value="a"> My dad name is Azman.
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="grammar4" value="b"> My dad's name is Azman.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="flex-btns">
+                    <button class="btn btn-primary btn-submit" data-exercise="writing_grammar">✅ Check Answers</button>
+                    <button class="btn btn-outline" onclick="resetExercise('writing-grammar-exercise')">🔄
+                        Reset</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================
+       WRITING MODULE 2 – Introducing Yourself
+       ========================================= -->
+        <section class="section" id="writing-mod2-section">
+            <h2 class="section-title">✏️ Writing Module 2 – Introducing Yourself on a Blog</h2>
+
+            <!-- Country / Nationality Sorting -->
+            <div class="exercise" id="writing-country-exercise">
+                <h3>Preparation: Countries &amp; Nationalities</h3>
+                <p>Drag each word into the correct column: <strong>Country</strong> or <strong>Nationality</strong>.</p>
+
+                <div class="word-bank" id="country-bank">
+                    <span class="word-bank-item" draggable="true" data-value="thailand">Thailand</span>
+                    <span class="word-bank-item" draggable="true" data-value="singapore">Singapore</span>
+                    <span class="word-bank-item" draggable="true" data-value="indonesia">Indonesia</span>
+                    <span class="word-bank-item" draggable="true" data-value="bruneian">Bruneian</span>
+                    <span class="word-bank-item" draggable="true" data-value="indonesian">Indonesian</span>
+                    <span class="word-bank-item" draggable="true" data-value="vietnam">Vietnam</span>
+                    <span class="word-bank-item" draggable="true" data-value="malaysia">Malaysia</span>
+                    <span class="word-bank-item" draggable="true" data-value="thai">Thai</span>
+                    <span class="word-bank-item" draggable="true" data-value="malaysian">Malaysian</span>
+                    <span class="word-bank-item" draggable="true" data-value="singaporean">Singaporean</span>
+                    <span class="word-bank-item" draggable="true" data-value="brunei">Brunei</span>
+                    <span class="word-bank-item" draggable="true" data-value="vietnamese">Vietnamese</span>
+                </div>
+
+                <div class="category-grid cols-2">
+                    <div class="category-column" id="cat-country">
+                        <h4>🌍 Country</h4>
+                    </div>
+                    <div class="category-column" id="cat-nationality">
+                        <h4>🏳️ Nationality</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Writing Tips -->
+            <div class="tips-box">
+                <h3>💡 WRITING TIPS – Contractions</h3>
+                <p>In informal writing (blogs, emails to friends), we join two words together using an apostrophe (').
+                </p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Full Form</th>
+                            <th>Contraction</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>My name is…</td>
+                            <td>My name's…</td>
+                            <td>My name's Adam.</td>
+                        </tr>
+                        <tr>
+                            <td>I am…</td>
+                            <td>I'm…</td>
+                            <td>I'm from Melaka.</td>
+                        </tr>
+                        <tr>
+                            <td>My dad is…</td>
+                            <td>My dad's…</td>
+                            <td>My dad's Malaysian.</td>
+                        </tr>
+                        <tr>
+                            <td>I have got…</td>
+                            <td>I've got…</td>
+                            <td>I've got a pet cat.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Sentence Ordering -->
+            <div class="exercise" id="writing-order-exercise">
+                <h3>Check Your Writing Order</h3>
+                <p>Drag the words into the correct order to make a sentence.</p>
+
+                <div class="question">
+                    <p class="question-text">1. Arrange these words into a sentence:</p>
+                    <ul class="sentence-order-list" id="order-list-1">
+                        <li class="sentence-order-item" draggable="true" data-word="my"><span
+                                class="drag-handle">⠿</span> my</li>
+                        <li class="sentence-order-item" draggable="true" data-word="hello"><span
+                                class="drag-handle">⠿</span> Hello</li>
+                        <li class="sentence-order-item" draggable="true" data-word="sarah."><span
+                                class="drag-handle">⠿</span> Sarah.</li>
+                        <li class="sentence-order-item" draggable="true" data-word="everyone,"><span
+                                class="drag-handle">⠿</span> everyone,</li>
+                        <li class="sentence-order-item" draggable="true" data-word="name's"><span
+                                class="drag-handle">⠿</span> name's</li>
+                    </ul>
+                </div>
+
+                <div class="question">
+                    <p class="question-text">2. Arrange these words into a sentence:</p>
+                    <ul class="sentence-order-list" id="order-list-2">
+                        <li class="sentence-order-item" draggable="true" data-word="old."><span
+                                class="drag-handle">⠿</span> old.</li>
+                        <li class="sentence-order-item" draggable="true" data-word="i'm"><span
+                                class="drag-handle">⠿</span> I'm</li>
+                        <li class="sentence-order-item" draggable="true" data-word="years"><span
+                                class="drag-handle">⠿</span> years</li>
+                        <li class="sentence-order-item" draggable="true" data-word="14"><span
+                                class="drag-handle">⠿</span> 14</li>
+                    </ul>
+                </div>
+
+                <div class="question">
+                    <p class="question-text">3. Arrange these words into a sentence:</p>
+                    <ul class="sentence-order-list" id="order-list-3">
+                        <li class="sentence-order-item" draggable="true" data-word="kedah."><span
+                                class="drag-handle">⠿</span> Kedah.</li>
+                        <li class="sentence-order-item" draggable="true" data-word="from"><span
+                                class="drag-handle">⠿</span> from</li>
+                        <li class="sentence-order-item" draggable="true" data-word="i'm"><span
+                                class="drag-handle">⠿</span> I'm</li>
+                    </ul>
+                </div>
+
+                <div class="question">
+                    <p class="question-text">4. Arrange these words into a sentence:</p>
+                    <ul class="sentence-order-list" id="order-list-4">
+                        <li class="sentence-order-item" draggable="true" data-word="2"><span
+                                class="drag-handle">⠿</span> 2</li>
+                        <li class="sentence-order-item" draggable="true" data-word="i'm"><span
+                                class="drag-handle">⠿</span> I'm</li>
+                        <li class="sentence-order-item" draggable="true" data-word="gemilang."><span
+                                class="drag-handle">⠿</span> Gemilang.</li>
+                        <li class="sentence-order-item" draggable="true" data-word="in"><span
+                                class="drag-handle">⠿</span> in</li>
+                        <li class="sentence-order-item" draggable="true" data-word="class"><span
+                                class="drag-handle">⠿</span> class</li>
+                    </ul>
+                </div>
+
+                <div class="question">
+                    <p class="question-text">5. Arrange these words into a sentence:</p>
+                    <ul class="sentence-order-list" id="order-list-5">
+                        <li class="sentence-order-item" draggable="true" data-word="snowy."><span
+                                class="drag-handle">⠿</span> Snowy.</li>
+                        <li class="sentence-order-item" draggable="true" data-word="a"><span
+                                class="drag-handle">⠿</span> a</li>
+                        <li class="sentence-order-item" draggable="true" data-word="named"><span
+                                class="drag-handle">⠿</span> named</li>
+                        <li class="sentence-order-item" draggable="true" data-word="i've"><span
+                                class="drag-handle">⠿</span> I've</li>
+                        <li class="sentence-order-item" draggable="true" data-word="rabbit"><span
+                                class="drag-handle">⠿</span> rabbit</li>
+                        <li class="sentence-order-item" draggable="true" data-word="got"><span
+                                class="drag-handle">⠿</span> got</li>
+                    </ul>
+                </div>
+
+                <div class="flex-btns">
+                    <button class="btn btn-primary btn-submit" data-exercise="writing_order">✅ Check Order</button>
+                    <button class="btn btn-outline" onclick="resetExercise('writing-order-exercise')">🔄 Reset</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================
+       WRITING MODULE 3 – My Favourite Meal
+       ========================================= -->
+        <section class="section" id="writing-mod3-section">
+            <h2 class="section-title">✏️ Writing Module 3 – My Favourite Meal</h2>
+
+            <!-- Food Pictures -->
+            <div class="exercise">
+                <h3>Preparation: Food Vocabulary</h3>
+                <p>Look at the pictures. Can you name each food?</p>
+
+                <div class="image-grid"
+                    style="grid-template-columns: repeat(3, 1fr); max-width: 600px; margin: 1.5rem auto;">
+                    <div class="image-item">
+                        <img src="images/writing/page20_img2.png" alt="Rice">
+                        <p style="font-weight:600; margin-top:.5rem;">Rice</p>
+                    </div>
+                    <div class="image-item">
+                        <img src="images/writing/page20_img1.png" alt="Peanuts">
+                        <p style="font-weight:600; margin-top:.5rem;">Peanuts</p>
+                    </div>
+                    <div class="image-item">
+                        <img src="images/writing/page20_img3.png" alt="Cucumber">
+                        <p style="font-weight:600; margin-top:.5rem;">Cucumber</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Writing Tips: Linking Words -->
+            <div class="info-box">
+                <h3>💡 WRITING TIPS – Linking Words</h3>
+                <p>Linking words help join your sentences so they flow better.</p>
+                <ul class="list-styled mt-1">
+                    <li><strong>and</strong> — before a similar idea</li>
+                    <li><strong>because</strong> — before a reason</li>
+                    <li><strong>but</strong> — before a different idea</li>
+                    <li><strong>so</strong> — before a result</li>
+                </ul>
+            </div>
+
+            <!-- Linking Words Drag Exercise -->
+            <div class="exercise" id="writing-mod3-exercise">
+                <h3>Complete the Gaps</h3>
+                <p>Drag the linking words into the correct blanks.</p>
+
+                <div class="word-bank" id="w3-bank">
+                    <span class="word-bank-item" draggable="true" data-value="so">so</span>
+                    <span class="word-bank-item" draggable="true" data-value="but">but</span>
+                    <span class="word-bank-item" draggable="true" data-value="and">and</span>
+                    <span class="word-bank-item" draggable="true" data-value="because">because</span>
+                    <span class="word-bank-item" draggable="true" data-value="and">and</span>
+                </div>
+
+                <div class="question">
+                    <p class="question-text">1. I can't cook <span class="drop-zone" id="w3-drop1"
+                            data-bank="w3-bank"></span> my mum cooks breakfast for me.</p>
+                </div>
+
+                <div class="question">
+                    <p class="question-text">2. I would love to eat Nasi Lemak every day <span class="drop-zone"
+                            id="w3-drop2" data-bank="w3-bank"></span> I don't want to get fat.</p>
+                </div>
+
+                <div class="question">
+                    <p class="question-text">3. In Malaysia, we eat rice for breakfast, lunch <span class="drop-zone"
+                            id="w3-drop3" data-bank="w3-bank"></span> dinner.</p>
+                </div>
+
+                <div class="question">
+                    <p class="question-text">4. You shouldn't eat too much sambal <span class="drop-zone" id="w3-drop4"
+                            data-bank="w3-bank"></span> it is very spicy.</p>
+                </div>
+
+                <div class="question">
+                    <p class="question-text">5. In my family, we drink Milo <span class="drop-zone" id="w3-drop5"
+                            data-bank="w3-bank"></span> tea for breakfast.</p>
+                </div>
+
+                <div class="flex-btns">
+                    <button class="btn btn-primary btn-submit" data-exercise="writing_mod3">✅ Check Answers</button>
+                    <button class="btn btn-outline" onclick="resetExercise('writing-mod3-exercise')">🔄 Reset</button>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 English Learning Website | Writing Module</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
