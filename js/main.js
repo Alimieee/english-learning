@@ -373,19 +373,18 @@ const answers = {
   },
 
   reading_mod3: {
-    type: 'mixed',
-    drops: {
-      'r3-drop1': 'montague',
-      'r3-drop2': 'party',
-      'r3-drop3': 'married',
-      'r3-drop4': 'priest',
-      'r3-drop5': 'friends',
-    },
-    tf: {
-      'r3-tf1': 'false',
-      'r3-tf2': 'true',
-      'r3-tf3': 'false',
-      'r3-tf4': 'true',
+    type: 'order',
+    items: {
+      'r3-order-list': [
+        "the capulet family and the montague family are always fighting.",
+        "romeo montague and juliet capulet fall in love.",
+        "tybalt, juliet's cousin, kills mercutio, romeo's friend.",
+        "romeo kills tybalt, so the prince of verona sends him away.",
+        "juliet makes a plan with friar lawrence to drink a special drink and pretend to be dead.",
+        "romeo doesn't get friar lawrence's letter and thinks juliet is dead.",
+        "romeo is so sad that he kills himself, then juliet sees romeo is dead, and she kills herself.",
+        "the families are so sad that they agree not to fight anymore.",
+      ]
     }
   },
 
