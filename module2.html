@@ -6,45 +6,446 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Module 2 – Buzz and Bob's Big Adventure | English Learning</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ===== Adventure & Outdoor Theme ===== */
+        body {
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 30%, #f0fdf4 60%, #dcfce7 100%);
+            min-height: 100vh;
+        }
+
+        /* Floating adventure icons */
+        .adventure-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .adv-icon {
+            position: absolute;
+            opacity: 0;
+            animation: floatAdv 9s ease-in-out infinite;
+        }
+
+        .adv-icon:nth-child(1) {
+            left: 3%;
+            animation-delay: 0s;
+            font-size: 1.3rem;
+        }
+
+        .adv-icon:nth-child(2) {
+            left: 14%;
+            animation-delay: 1.3s;
+            font-size: 1.6rem;
+        }
+
+        .adv-icon:nth-child(3) {
+            left: 24%;
+            animation-delay: 2.8s;
+            font-size: 1rem;
+        }
+
+        .adv-icon:nth-child(4) {
+            left: 34%;
+            animation-delay: 0.5s;
+            font-size: 1.7rem;
+        }
+
+        .adv-icon:nth-child(5) {
+            left: 44%;
+            animation-delay: 3.5s;
+            font-size: 1.2rem;
+        }
+
+        .adv-icon:nth-child(6) {
+            left: 56%;
+            animation-delay: 1.8s;
+            font-size: 1.4rem;
+        }
+
+        .adv-icon:nth-child(7) {
+            left: 66%;
+            animation-delay: 4.2s;
+            font-size: 1rem;
+        }
+
+        .adv-icon:nth-child(8) {
+            left: 76%;
+            animation-delay: 2.2s;
+            font-size: 1.5rem;
+        }
+
+        .adv-icon:nth-child(9) {
+            left: 86%;
+            animation-delay: 3s;
+            font-size: 1.1rem;
+        }
+
+        .adv-icon:nth-child(10) {
+            left: 93%;
+            animation-delay: 0.8s;
+            font-size: 1.3rem;
+        }
+
+        @keyframes floatAdv {
+            0% {
+                transform: translateY(100vh) rotate(0deg) scale(0.5);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.5;
+            }
+
+            50% {
+                opacity: 0.25;
+            }
+
+            100% {
+                transform: translateY(-10vh) rotate(-15deg) scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        /* Adventure Header */
+        .adventure-header {
+            background: linear-gradient(135deg, #059669 0%, #047857 40%, #065f46 100%);
+            padding: 3rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .adventure-header::before {
+            content: '🚴';
+            position: absolute;
+            top: 12px;
+            left: 20px;
+            font-size: 2.2rem;
+            opacity: 0.3;
+            animation: ride 3s ease-in-out infinite;
+        }
+
+        .adventure-header::after {
+            content: '⛰️';
+            position: absolute;
+            bottom: 8px;
+            right: 20px;
+            font-size: 2.5rem;
+            opacity: 0.3;
+        }
+
+        @keyframes ride {
+
+            0%,
+            100% {
+                transform: translateX(0) rotate(0deg);
+            }
+
+            25% {
+                transform: translateX(5px) rotate(-3deg);
+            }
+
+            75% {
+                transform: translateX(-5px) rotate(3deg);
+            }
+        }
+
+        .adventure-header h1 {
+            font-family: 'Fredoka One', cursive;
+            color: #fff;
+            font-size: 2.2rem;
+            font-weight: 400;
+            margin: 0 0 0.5rem;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, .15);
+            letter-spacing: 0.5px;
+        }
+
+        .adventure-header p {
+            color: rgba(255, 255, 255, .9);
+            font-size: 1.1rem;
+            margin: 0;
+            font-style: italic;
+        }
+
+        /* Nav override */
+        nav {
+            background: linear-gradient(135deg, #065f46, #064e3b) !important;
+            backdrop-filter: none !important;
+        }
+
+        nav .logo {
+            color: #6ee7b7 !important;
+        }
+
+        .container.module-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Adventure Story Box */
+        .adventure-story-box {
+            background: linear-gradient(135deg, #fff 0%, #ecfdf5 100%);
+            border: 2px solid #6ee7b7;
+            border-radius: 16px;
+            padding: 2rem 2rem 2rem 2.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+            box-shadow: 0 4px 24px rgba(5, 150, 105, .08);
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+
+        .adventure-story-box::before {
+            content: '🏕️';
+            position: absolute;
+            top: -14px;
+            left: 24px;
+            font-size: 1.6rem;
+        }
+
+        .adventure-story-box p {
+            margin: 0.6rem 0;
+            color: #14392a;
+        }
+
+        .adventure-story-box p:first-child {
+            margin-top: 0;
+        }
+
+        .adventure-story-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Highlight dialogue */
+        .adventure-story-box .dialogue {
+            font-style: italic;
+            color: #059669;
+            font-weight: 500;
+            background: rgba(110, 231, 183, 0.15);
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            border-left: 3px solid #34d399;
+            display: block;
+            margin: 0.8rem 0;
+        }
+
+        /* Day labels */
+        .day-label {
+            display: inline-block;
+            background: linear-gradient(135deg, #059669, #047857);
+            color: #fff;
+            padding: 0.15rem 0.6rem;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-right: 0.3rem;
+        }
+
+        /* Adventure Exercise Box */
+        .adventure-exercise {
+            background: #fff;
+            border: 2px solid #6ee7b7;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(5, 150, 105, .06);
+            margin-bottom: 2rem;
+        }
+
+        .adventure-exercise h3 {
+            font-family: 'Fredoka One', cursive;
+            color: #065f46;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+
+        .adventure-exercise>p {
+            color: #1a4a3a;
+        }
+
+        /* Image grid styling */
+        .adventure-exercise .image-item {
+            background: linear-gradient(135deg, #ecfdf5 0%, #fff 100%);
+            border: 2px solid #a7f3d0;
+            border-radius: 12px;
+            padding: 0.8rem;
+            transition: all .2s ease;
+        }
+
+        .adventure-exercise .image-item:hover {
+            border-color: #34d399;
+            box-shadow: 0 4px 16px rgba(5, 150, 105, .12);
+            transform: translateY(-3px);
+        }
+
+        .adventure-exercise .image-item img {
+            border-radius: 8px;
+        }
+
+        /* Select dropdowns */
+        .adventure-exercise select {
+            border: 2px solid #6ee7b7 !important;
+            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            color: #065f46;
+            font-weight: 500;
+            background: #ecfdf5;
+        }
+
+        .adventure-exercise select:focus {
+            border-color: #059669 !important;
+            box-shadow: 0 0 0 3px rgba(5, 150, 105, .15);
+        }
+
+        /* Kahoot button */
+        .adventure-exercise .btn-game {
+            background: linear-gradient(135deg, #059669, #047857) !important;
+            color: #fff !important;
+            border: none !important;
+            box-shadow: 0 4px 14px rgba(5, 150, 105, .3);
+            font-weight: 700;
+            padding: 0.8rem 2rem;
+            border-radius: 12px;
+            font-size: 1.05rem;
+            transition: all .2s ease;
+        }
+
+        .adventure-exercise .btn-game:hover {
+            background: linear-gradient(135deg, #047857, #065f46) !important;
+            box-shadow: 0 6px 20px rgba(5, 150, 105, .4);
+            transform: translateY(-2px);
+        }
+
+        /* Themed buttons */
+        .adventure-exercise .btn-primary {
+            background: linear-gradient(135deg, #059669, #047857) !important;
+            border: none !important;
+            box-shadow: 0 4px 14px rgba(5, 150, 105, .3);
+        }
+
+        .adventure-exercise .btn-primary:hover {
+            background: linear-gradient(135deg, #047857, #065f46) !important;
+            box-shadow: 0 6px 20px rgba(5, 150, 105, .4);
+        }
+
+        .adventure-exercise .btn-outline {
+            color: #059669 !important;
+            border-color: #6ee7b7 !important;
+        }
+
+        .adventure-exercise .btn-outline:hover {
+            background: #ecfdf5 !important;
+        }
+
+        /* Section title */
+        .adventure-section-title {
+            font-family: 'Fredoka One', cursive;
+            color: #065f46;
+            font-size: 1.6rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .adventure-section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #6ee7b7, #059669, #6ee7b7);
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #065f46, #064e3b) !important;
+            color: #6ee7b7 !important;
+        }
+
+        footer p {
+            color: #6ee7b7 !important;
+        }
+
+        @media (max-width: 600px) {
+            .adventure-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .adventure-story-box {
+                padding: 1.2rem;
+            }
+
+            .adventure-exercise {
+                padding: 1.2rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
+    <!-- Floating Adventure Background -->
+    <div class="adventure-bg">
+        <span class="adv-icon">🚴</span>
+        <span class="adv-icon">⛰️</span>
+        <span class="adv-icon">🏄</span>
+        <span class="adv-icon">🪂</span>
+        <span class="adv-icon">🌲</span>
+        <span class="adv-icon">🦅</span>
+        <span class="adv-icon">🚵</span>
+        <span class="adv-icon">🏔️</span>
+        <span class="adv-icon">🌊</span>
+        <span class="adv-icon">🧗</span>
+    </div>
+
     <nav>
         <div class="container">
             <a href="index.html" class="logo">📚 English Learning</a>
         </div>
     </nav>
 
-    <div class="module-header header-reading">
-        <h1>📚 Module 2 – Buzz and Bob's Big Adventure</h1>
-        <p>Read the adventure story, then complete the exercises below!</p>
+    <div class="adventure-header">
+        <h1>🚴 Buzz and Bob's Big Adventure 🏔️</h1>
+        <p>An exciting week of outdoor sports and thrilling challenges!</p>
     </div>
 
     <div class="container module-content">
         <section class="section" id="reading-mod2-section">
-            <div class="story-box">
-                <p>This is Buzz and his friend Bob. They are going on holiday to an adventure camp. "Hello, I'm Buzz,
-                    and I love adventure sports." "Hello, I'm Bob. I can do everything."</p>
-                <p>Buzz and Bob arrive at the camp. Buzz is very excited. "Look, Bob! What shall we do first?"</p>
-                <p>On Monday, they ride BMX bikes. "Whee, this is great!" "Be careful, Bob!"</p>
-                <p>On Tuesday, they go rock climbing. "Look out for the rocks, Bob!" "Ouch!" Buzz helps Bob to the top.
+            <h2 class="adventure-section-title">📖 Read the Story</h2>
+
+            <div class="adventure-story-box">
+                <p>This is Buzz and his friend Bob. They are going on holiday to an adventure camp.</p>
+                <p class="dialogue">"Hello, I'm Buzz, and I love adventure sports." "Hello, I'm Bob. I can do
+                    everything."</p>
+                <p>Buzz and Bob arrive at the camp. Buzz is very excited.</p>
+                <p class="dialogue">"Look, Bob! What shall we do first?"</p>
+                <p><span class="day-label">Monday</span> They ride BMX bikes. "Whee, this is great!" "Be careful, Bob!"
                 </p>
-                <p>On Wednesday, they go rafting. Bob is very scared. His face goes green. "Come on, Bob. This is
-                    great!"</p>
-                <p>On Thursday, Buzz and Bob go caving in an underground cave. There are lots of bats. "It's dark in
-                    here! I don't like bats."</p>
-                <p>On Friday, they go surfing. They do surfing tricks. "Look at me! I'm a great surfer." "Oh no, you're
-                    not!"</p>
-                <p>On Saturday, they go parachuting. They jump and fall through the air but... Oh no! Something is
-                    wrong. "Buzz! Help me!" Buzz catches Bob. They float down to earth. "Thanks, Buzz. You saved me!"
-                </p>
-                <p>"Well done, Buzz. You are very brave. Your special prize is a bungee jump." "Great! Here I go. One
-                    ... two ... three ... Whee!"</p>
+                <p><span class="day-label">Tuesday</span> They go rock climbing. "Look out for the rocks, Bob!" "Ouch!"
+                    Buzz helps Bob to the top. 🧗</p>
+                <p><span class="day-label">Wednesday</span> They go rafting. Bob is very scared. His face goes green.
+                    "Come on, Bob. This is great!" 🌊</p>
+                <p><span class="day-label">Thursday</span> Buzz and Bob go caving in an underground cave. There are lots
+                    of bats. "It's dark in here! I don't like bats." 🦇</p>
+                <p><span class="day-label">Friday</span> They go surfing. They do surfing tricks. "Look at me! I'm a
+                    great surfer." "Oh no, you're not!" 🏄</p>
+                <p><span class="day-label">Saturday</span> They go parachuting. They jump and fall through the air
+                    but... Oh no! Something is wrong. "Buzz! Help me!" Buzz catches Bob. They float down to earth.
+                    "Thanks, Buzz. You saved me!" 🪂</p>
+                <p class="dialogue">"Well done, Buzz. You are very brave. Your special prize is a bungee jump." "Great!
+                    Here I go. One ... two ... three ... Whee!" 🎉</p>
             </div>
 
             <!-- Part 1: Adventure Sport Pictures -->
-            <div class="exercise">
-                <h3>Part 1: Match &amp; Learn – Find the Correct Picture!</h3>
+            <div class="adventure-exercise">
+                <h3>🏔️ Part 1: Match & Learn – Find the Correct Picture!</h3>
                 <p>Look at the pictures of adventure sports from the story. You can also take the interactive Kahoot
                     quiz!</p>
 
@@ -78,8 +479,8 @@
             </div>
 
             <!-- Part 2: Match Days & Activities -->
-            <div class="exercise" id="reading-mod2-exercise">
-                <h3>Part 2: Match Them Up</h3>
+            <div class="adventure-exercise" id="reading-mod2-exercise">
+                <h3>🗓️ Part 2: Match Them Up</h3>
                 <p>Match the days of the week with the activities from the story.</p>
 
                 <div class="question">
@@ -138,7 +539,7 @@
                     </select>
                 </div>
 
-                <h3 class="mt-3">Part 3: Make It Right</h3>
+                <h3 class="mt-3">🔧 Part 3: Make It Right</h3>
                 <p>Find the mistake in each sentence and choose the correct word.</p>
 
                 <div class="question">
@@ -185,7 +586,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 English Learning Website | Module 2</p>
+        <p>&copy; 2026 English Learning Website | Module 2 – Buzz and Bob's Big Adventure 🏔️</p>
     </footer>
     <script src="js/main.js"></script>
 </body>
