@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Learning (A1) – Reading Module</title>
+    <meta name="description"
+        content="Free interactive A1-level English learning website. Practice reading through stories about family and relationships.">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .module-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 3rem 0 4rem;
+        }
+
+        .module-card {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            background: var(--surface);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            transition: transform .3s ease, box-shadow .3s ease;
+            cursor: pointer;
+        }
+
+        .module-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(79, 70, 229, .18);
+        }
+
+        .module-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .module-card h3 {
+            text-align: center;
+            padding: 1.2rem 1rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-800);
+            margin: 0;
+        }
+
+        .module-card:hover h3 {
+            color: var(--primary);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">📚 English Learning</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="reading.html" class="active">Reading</a></li>
+                <li><a href="speaking.html">Speaking</a></li>
+                <li><a href="listening.html">Listening</a></li>
+                <li><a href="writing.html">Writing</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>📖 Reading Module</h1>
+        <p>Choose a story to read and complete interactive exercises!</p>
+    </div>
+
+    <!-- Module Cards -->
+    <div class="container">
+        <div class="module-cards">
+
+            <a href="module1.html" class="module-card">
+                <img src="images/covers/family.png" alt="My Family Life">
+                <h3>My Family Life</h3>
+            </a>
+
+            <a href="module2.html" class="module-card">
+                <img src="images/covers/adventure.png" alt="Buzz and Bob's Big Adventure">
+                <h3>Buzz and Bob's Big Adventure</h3>
+            </a>
+
+            <a href="module3.html" class="module-card">
+                <img src="images/covers/romeo.png" alt="Romeo and Juliet">
+                <h3>Romeo and Juliet</h3>
+            </a>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 English Learning Website — A1 Level</p>
+        <p>Theme: Family &amp; Relationships</p>
+    </footer>
+
+</body>
+
+</html>
