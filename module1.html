@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 1 – My Family Life | English Learning</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">📚 English Learning</a>
+        </div>
+    </nav>
+
+    <div class="module-header header-reading">
+        <h1>📚 Module 1 – My Family Life</h1>
+        <p>Read the story about Lina's family, then complete the exercises below!</p>
+    </div>
+
+    <div class="container module-content">
+        <section class="section" id="reading-mod1-section">
+            <div class="story-box">
+                <p>My name is Lina.</p>
+                <p>I live with my parents and grandparents in Pahang.</p>
+                <p>I have a father, a mother, a grandfather, a grandmother, and one younger sister.</p>
+                <p>My father works in a bank.</p>
+                <p>My mother teaches at a school.</p>
+                <p>My younger sister is 6 years old. She likes to read a book.</p>
+                <p>Every day, we eat dinner together.</p>
+                <p>We talk and laugh.</p>
+                <p>On Sunday, we go to the park.</p>
+                <p>I love my family very much.</p>
+                <p>My family makes me happy.</p>
+            </div>
+
+            <div class="exercise" id="reading-mod1-exercise">
+                <h3>Part 1: Comprehension – Drag the Answers!</h3>
+                <p>Drag each word from the bank and drop it into the correct blank.</p>
+
+                <div class="word-bank" id="r1-bank">
+                    <span class="word-bank-item" draggable="true" data-value="park">Park</span>
+                    <span class="word-bank-item" draggable="true" data-value="reading">Reading</span>
+                    <span class="word-bank-item" draggable="true" data-value="bank">Bank</span>
+                    <span class="word-bank-item" draggable="true" data-value="lina">Lina</span>
+                    <span class="word-bank-item" draggable="true" data-value="six">Six</span>
+                </div>
+
+                <div class="question">
+                    <p class="question-text">1. What is the girl's name? → <span class="drop-zone" id="r1-drop1"
+                            data-bank="r1-bank"></span></p>
+                </div>
+                <div class="question">
+                    <p class="question-text">2. How old is her younger sister? → <span class="drop-zone" id="r1-drop2"
+                            data-bank="r1-bank"></span></p>
+                </div>
+                <div class="question">
+                    <p class="question-text">3. Where does her father work? → <span class="drop-zone" id="r1-drop3"
+                            data-bank="r1-bank"></span></p>
+                </div>
+                <div class="question">
+                    <p class="question-text">4. What does her younger sister like? → <span class="drop-zone"
+                            id="r1-drop4" data-bank="r1-bank"></span></p>
+                </div>
+                <div class="question">
+                    <p class="question-text">5. Where does the family go on Sunday? → <span class="drop-zone"
+                            id="r1-drop5" data-bank="r1-bank"></span></p>
+                </div>
+
+                <h3 class="mt-3">Part 2: True or False</h3>
+                <p>Click <strong>True</strong> or <strong>False</strong> for each statement.</p>
+
+                <div class="question">
+                    <p class="question-text">1. Lina lives in a big house.</p>
+                    <div class="tf-toggle-group" id="r1-tf1">
+                        <button class="tf-btn" data-value="true">True</button>
+                        <button class="tf-btn" data-value="false">False</button>
+                    </div>
+                </div>
+                <div class="question">
+                    <p class="question-text">2. Her mother teaches at a school.</p>
+                    <div class="tf-toggle-group" id="r1-tf2">
+                        <button class="tf-btn" data-value="true">True</button>
+                        <button class="tf-btn" data-value="false">False</button>
+                    </div>
+                </div>
+                <div class="question">
+                    <p class="question-text">3. The family eats dinner together every day.</p>
+                    <div class="tf-toggle-group" id="r1-tf3">
+                        <button class="tf-btn" data-value="true">True</button>
+                        <button class="tf-btn" data-value="false">False</button>
+                    </div>
+                </div>
+                <div class="question">
+                    <p class="question-text">4. They go to the park on Saturday.</p>
+                    <div class="tf-toggle-group" id="r1-tf4">
+                        <button class="tf-btn" data-value="true">True</button>
+                        <button class="tf-btn" data-value="false">False</button>
+                    </div>
+                </div>
+
+                <div class="flex-btns">
+                    <button class="btn btn-primary btn-submit" data-exercise="reading_mod1">✅ Submit All
+                        Answers</button>
+                    <button class="btn btn-outline" onclick="resetExercise('reading-mod1-exercise')">🔄 Reset</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 English Learning Website | Module 1</p>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
