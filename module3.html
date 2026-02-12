@@ -6,30 +6,391 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Module 3 – Romeo and Juliet | English Learning</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ===== Love Story Theme ===== */
+        body {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe0e6 30%, #fdf2f8 60%, #fce7f3 100%);
+            min-height: 100vh;
+        }
+
+        /* Floating Hearts Animation */
+        .hearts-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 1.2rem;
+            opacity: 0;
+            animation: floatHeart 8s ease-in-out infinite;
+        }
+
+        .heart:nth-child(1) {
+            left: 5%;
+            animation-delay: 0s;
+            font-size: 1rem;
+        }
+
+        .heart:nth-child(2) {
+            left: 15%;
+            animation-delay: 1.2s;
+            font-size: 1.4rem;
+        }
+
+        .heart:nth-child(3) {
+            left: 25%;
+            animation-delay: 2.5s;
+            font-size: 0.9rem;
+        }
+
+        .heart:nth-child(4) {
+            left: 35%;
+            animation-delay: 0.8s;
+            font-size: 1.6rem;
+        }
+
+        .heart:nth-child(5) {
+            left: 45%;
+            animation-delay: 3.2s;
+            font-size: 1.1rem;
+        }
+
+        .heart:nth-child(6) {
+            left: 55%;
+            animation-delay: 1.8s;
+            font-size: 1.3rem;
+        }
+
+        .heart:nth-child(7) {
+            left: 65%;
+            animation-delay: 4s;
+            font-size: 0.8rem;
+        }
+
+        .heart:nth-child(8) {
+            left: 75%;
+            animation-delay: 2s;
+            font-size: 1.5rem;
+        }
+
+        .heart:nth-child(9) {
+            left: 85%;
+            animation-delay: 3.5s;
+            font-size: 1rem;
+        }
+
+        .heart:nth-child(10) {
+            left: 92%;
+            animation-delay: 0.5s;
+            font-size: 1.2rem;
+        }
+
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(100vh) rotate(0deg) scale(0.5);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.6;
+            }
+
+            50% {
+                opacity: 0.3;
+            }
+
+            100% {
+                transform: translateY(-10vh) rotate(45deg) scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        /* Love-Themed Header */
+        .love-header {
+            background: linear-gradient(135deg, #e11d48 0%, #be185d 40%, #9d174d 100%);
+            padding: 3rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .love-header::before {
+            content: '💕';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 2rem;
+            opacity: 0.3;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .love-header::after {
+            content: '💕';
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
+            font-size: 2rem;
+            opacity: 0.3;
+            animation: pulse 2s ease-in-out infinite 1s;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.3);
+            }
+        }
+
+        .love-header h1 {
+            font-family: 'Playfair Display', serif;
+            color: #fff;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin: 0 0 0.5rem;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, .15);
+        }
+
+        .love-header p {
+            color: rgba(255, 255, 255, .9);
+            font-size: 1.1rem;
+            margin: 0;
+            font-style: italic;
+        }
+
+        /* Nav override for love theme */
+        nav {
+            background: linear-gradient(135deg, #881337, #9f1239) !important;
+            backdrop-filter: none !important;
+        }
+
+        nav .logo {
+            color: #fecdd3 !important;
+        }
+
+        /* Content area */
+        .container.module-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Love-themed Story Box */
+        .love-story-box {
+            background: linear-gradient(135deg, #fff 0%, #fff1f2 100%);
+            border: 2px solid #fecdd3;
+            border-radius: 16px;
+            padding: 2rem 2rem 2rem 2.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+            box-shadow: 0 4px 24px rgba(225, 29, 72, .08);
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+
+        .love-story-box::before {
+            content: '❤️';
+            position: absolute;
+            top: -14px;
+            left: 24px;
+            font-size: 1.6rem;
+        }
+
+        .love-story-box p {
+            margin: 0.6rem 0;
+            color: #4a1a2e;
+        }
+
+        .love-story-box p:first-child {
+            margin-top: 0;
+        }
+
+        .love-story-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Highlight dialogue */
+        .love-story-box .dialogue {
+            font-style: italic;
+            color: #be185d;
+            font-weight: 500;
+            background: rgba(251, 207, 232, 0.3);
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            border-left: 3px solid #ec4899;
+            display: block;
+            margin: 0.8rem 0;
+        }
+
+        /* Love-themed Exercise Box */
+        .love-exercise {
+            background: #fff;
+            border: 2px solid #fecdd3;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(225, 29, 72, .06);
+        }
+
+        .love-exercise h3 {
+            font-family: 'Playfair Display', serif;
+            color: #9f1239;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .love-exercise>p {
+            color: #6b2140;
+        }
+
+        /* Sentence items with love theme */
+        .love-exercise .sentence-order-item {
+            background: linear-gradient(135deg, #fff5f7 0%, #fff 100%);
+            border: 2px solid #fda4af;
+            border-radius: 12px;
+            color: #4a1a2e;
+            font-weight: 500;
+            transition: all .2s ease;
+        }
+
+        .love-exercise .sentence-order-item:hover {
+            border-color: #fb7185;
+            background: linear-gradient(135deg, #ffe4e6 0%, #fff 100%);
+            box-shadow: 0 4px 12px rgba(225, 29, 72, .1);
+        }
+
+        .love-exercise .sentence-order-item::before {
+            content: '💗';
+            margin-right: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .love-exercise .sentence-order-item.dragging {
+            opacity: .4;
+            border-color: #e11d48;
+        }
+
+        .love-exercise .sentence-order-item.drag-over-item {
+            border-color: #e11d48;
+            background: rgba(225, 29, 72, .08);
+        }
+
+        /* Love-themed buttons */
+        .love-exercise .btn-primary {
+            background: linear-gradient(135deg, #e11d48, #be185d) !important;
+            border: none !important;
+            box-shadow: 0 4px 14px rgba(225, 29, 72, .3);
+        }
+
+        .love-exercise .btn-primary:hover {
+            background: linear-gradient(135deg, #be185d, #9f1239) !important;
+            box-shadow: 0 6px 20px rgba(225, 29, 72, .4);
+        }
+
+        .love-exercise .btn-outline {
+            color: #e11d48 !important;
+            border-color: #fda4af !important;
+        }
+
+        .love-exercise .btn-outline:hover {
+            background: #fff1f2 !important;
+        }
+
+        /* Love-themed Footer */
+        footer {
+            background: linear-gradient(135deg, #881337, #9f1239) !important;
+            color: #fecdd3 !important;
+        }
+
+        footer p {
+            color: #fecdd3 !important;
+        }
+
+        /* Section title */
+        .love-section-title {
+            font-family: 'Playfair Display', serif;
+            color: #9f1239;
+            font-size: 1.6rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .love-section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #fda4af, #e11d48, #fda4af);
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+
+        @media (max-width: 600px) {
+            .love-header h1 {
+                font-size: 1.6rem;
+            }
+
+            .love-story-box {
+                padding: 1.2rem;
+            }
+
+            .love-exercise {
+                padding: 1.2rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
+    <!-- Floating Hearts Background -->
+    <div class="hearts-bg">
+        <span class="heart">💗</span>
+        <span class="heart">❤️</span>
+        <span class="heart">💕</span>
+        <span class="heart">💖</span>
+        <span class="heart">♥️</span>
+        <span class="heart">💗</span>
+        <span class="heart">❤️</span>
+        <span class="heart">💕</span>
+        <span class="heart">💖</span>
+        <span class="heart">♥️</span>
+    </div>
+
     <nav>
         <div class="container">
             <a href="index.html" class="logo">📚 English Learning</a>
         </div>
     </nav>
 
-    <div class="module-header header-reading">
-        <h1>📚 Module 3 – Romeo and Juliet</h1>
-        <p>Read the love story, then complete the exercises below!</p>
+    <div class="love-header">
+        <h1>💕 Romeo and Juliet 💕</h1>
+        <p>"For never was a story of more woe, than this of Juliet and her Romeo."</p>
     </div>
 
     <div class="container module-content">
         <section class="section" id="reading-mod3-section">
-            <div class="story-box">
+            <h2 class="love-section-title">📖 Read the Story</h2>
+
+            <div class="love-story-box">
                 <p>Romeo is a young man from the Montague family.</p>
                 <p>Juliet is a young woman from the Capulet family.</p>
                 <p>The two families do not like each other.</p>
                 <p>One night, Romeo goes to a party at the Capulet house.</p>
                 <p>He sees Juliet and falls in love with her.</p>
                 <p>Juliet also loves Romeo.</p>
-                <p>"Romeo, Romeo! Where are you, Romeo?" says Juliet.</p>
+                <p class="dialogue">"Romeo, Romeo! Where are you, Romeo?" says Juliet.</p>
                 <p>They want to be together, but their families say no.</p>
                 <p>Romeo and Juliet decide to get married in secret.</p>
                 <p>A kind priest helps them.</p>
@@ -39,11 +400,11 @@
                 <p>In the end, Romeo and Juliet cannot be together.</p>
                 <p>Their families are very sorry.</p>
                 <p>The two families finally become friends.</p>
-                <p>This is a story about love and family.</p>
+                <p>This is a story about love and family. 💔</p>
             </div>
 
-            <div class="exercise" id="reading-mod3-exercise">
-                <h3>Part 1: What's the order?</h3>
+            <div class="love-exercise" id="reading-mod3-exercise">
+                <h3>💕 Part 1: What's the order?</h3>
                 <p>Read the story of Romeo and Juliet and put the sentences in order. <strong>Drag</strong> the
                     sentences to rearrange them from 1 to 8.</p>
 
@@ -84,7 +445,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 English Learning Website | Module 3</p>
+        <p>&copy; 2026 English Learning Website | Module 3 – Romeo and Juliet 💕</p>
     </footer>
     <script src="js/main.js"></script>
 </body>
