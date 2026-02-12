@@ -276,8 +276,17 @@ nav a.active {
 }
 
 .card .icon {
-  font-size: 2.75rem;
+  font-size: 2.8rem;
   margin-bottom: .75rem;
+}
+
+.card-icon {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: .75rem;
+  border: 3px solid rgba(79, 70, 229, .12);
 }
 
 .card h3 {
