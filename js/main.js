@@ -372,6 +372,23 @@ const answers = {
     }
   },
 
+  reading_mod3: {
+    type: 'mixed',
+    drops: {
+      'r3-drop1': 'montague',
+      'r3-drop2': 'party',
+      'r3-drop3': 'married',
+      'r3-drop4': 'priest',
+      'r3-drop5': 'friends',
+    },
+    tf: {
+      'r3-tf1': 'false',
+      'r3-tf2': 'true',
+      'r3-tf3': 'false',
+      'r3-tf4': 'true',
+    }
+  },
+
   /* === WRITING MODULE === */
   writing_mod1: {
     type: 'drop',
